@@ -1,0 +1,27 @@
+ALGORITMO "Hora extra"
+
+	Var horasTrabalhadas : Inteiro
+	Var salario : Real
+	Var salarioTotal : Real
+
+INICIO
+
+	Escreva("Digite a quantidade de horas trabalhadas neste mês")
+	Leia(horasTrabalhadas)
+	
+	Escreva("Digite o salário por hora trabalhada")
+	Leia(salario)
+	
+	SE (horasTrabalhadas>160) ENTAO
+	
+		salarioTotal <- ((salario * 0.5) + salario) * horasTrabalhadas
+		Escreva("O salário com acréscimo de hora extra foi de "+salarioTotal)
+	
+	SENAO
+		
+		salarioTotal <- salario * horasTrabalhadas
+		Escreva("O salário sem acréscimo de hora extra foi de "+salarioTotal)
+		
+	FIM-SE
+	
+FIMALGORITMO
