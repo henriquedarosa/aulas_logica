@@ -1,0 +1,43 @@
+Crie um algoritmo que leia o nome de 2 times e o número de gols marcados na partida (para cada time).
+No fim, escreva o resultado do placar e da partida.
+
+ALGORITMO "Placar e Partida"
+
+	Var time1 : Caracter
+	Var time2 : Caracter
+	Var golsTime1 : Inteiro
+	Var golsTime2 : Inteiro
+	
+INICIO
+
+	Escreva("Digite o nome do primeiro time")
+	Leia(time1)
+	
+	Escreva("Digite o nome do segundo time")
+	Leia(time2)
+	
+	Escreva("Digite o número de gols marcados pelo "+time1)
+	Leia(golsTime1)
+	
+	Escreva("Digite o número de gols marcados pelo "+time2)
+	Leia(golsTime2)
+	
+	IF (golsTime1>golsTime2) ENTAO
+	
+		Escreva(time1+" venceu do "+time2+" com o placar de "+golsTime1+" a "+golsTime2)
+	
+	SENAO
+  
+			IF (golsTime1==golsTime2) ENTAO
+			
+				Escreva(time1+" empatou com "+time2+" com o placar de "+golsTime1+" a "+golsTime2)
+				
+			SENAO
+			
+				Escreva(time1+" perdeu do "+time2+" com o placar de "+golsTime1+" a "+golsTime2)
+		
+			FIM-SE
+      
+	FIM-SE
+	
+FIMALGORITMO
