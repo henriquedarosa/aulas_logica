@@ -1,0 +1,39 @@
+ALGORITMO "Cálculo do IMC"
+
+	Var peso : Real
+	Var altura : Real
+	Var imc: Real
+
+INICIO
+
+	Escreva("Digite seu peso")
+	Leia(peso)
+	
+	Escreva("Digite sua altura")
+	Leia(altura)
+	
+	imc <- peso / (altura * altura)
+	
+	SE (imc < 18.5) ENTAO
+		Escreva("Abaixo do peso")	
+	SENAO
+		SE (imc >= 18.5 E imc <= 24.9) ENTAO
+			Escreva("Peso normal")
+		SENAO
+			SE (imc >= 25 E imc <= 29.9 ) ENTAO
+				Escreva("Sobrepeso")
+			SENAO
+				SE (imc >= 30 E imc <= 34.9 ) ENTAO
+					Escreva("Obesidade grau I")
+				SENAO
+					SE (imc >= 35 E <= 39.9) ENTAO
+						Escreva("Obesidade grau II")
+					SENAO
+						Escreva("Obesidade grau III")
+					FIM-SE
+				FIM-SE				
+			FIM-SE
+		FIM-SE
+	FIM-SE
+
+FIMALGORITMO
