@@ -1,0 +1,25 @@
+ALGORITMO "Contador"
+
+	Var numero : Inteiro
+
+INICIO
+
+	Escreva("Digite um número")
+	Leia(numero)
+
+	SE (numero < 100) ENTAO
+
+		ENQUANTO (numero < 100) FACA
+		
+			numero <- numero +1
+			Escreva(numero)
+		
+		FIM-ENQUANTO
+	
+	SENAO
+		
+		Escreva("O número digitado deve ser menor que 100!")
+		
+	FIM-SE
+
+FIMALGORITMO
