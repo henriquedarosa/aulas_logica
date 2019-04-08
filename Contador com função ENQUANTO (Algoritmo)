@@ -4,22 +4,16 @@ ALGORITMO "Contador"
 
 INICIO
 
-	Escreva("Digite um número")
-	Leia(numero)
-
-	SE (numero < 100) ENTAO
-
-		ENQUANTO (numero < 100) FACA
-		
-			numero <- numero +1
-			Escreva(numero)
-		
-		FIM-ENQUANTO
+	numero <- 999
 	
-	SENAO
-		
-		Escreva("O número digitado deve ser menor que 100!")
-		
-	FIM-SE
+	ENQUANTO (numero >= 100) FACA
+		Escreva("Digite um número menor que 100")
+		Leia(numero)
+	FIM-ENQUANTO
+	
+	ENQUANTO (numero < 100) FACA
+		numero <- numero + 1
+		Escreva(numero)		
+	FIM-ENQUANTO
 
 FIMALGORITMO
