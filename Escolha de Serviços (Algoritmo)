@@ -1,0 +1,151 @@
+Algoritmo "Escolha de Servicos"
+
+Var
+       servico1 : Caracter
+       servico2 : Caracter
+       servico3 : Caracter
+       servico4 : Caracter
+       servico5 : Caracter
+       descricao1: Caracter
+       descricao2: Caracter
+       descricao3: Caracter
+       descricao4: Caracter
+       descricao5: Caracter
+       valor1: Real
+       valor2: Real
+       valor3: Real
+       valor4: Real
+       valor5: Real
+       codigoVendedor : Inteiro
+       cpf : Real
+       selecaoMenu : Inteiro
+       selecaoServico: Inteiro
+       valorAjustado1: Real
+       valorAjustado2: Real
+       valorAjustado3: Real
+       valorAjustado4: Real
+       valorAjustado5: Real
+
+Inicio
+
+      servico1 <- "Plano Basic"
+      descricao1 <- "Internet 5 Mb sem TV a cabo."
+      valor1 <- 30.00
+      
+      servico2 <- "Plano Mega"
+      descricao2 <- "Internet 10 Mb sem TV a cabo."
+      valor2 <- 55.00
+
+      servico3 <- "Plano Ultra"
+      descricao3 <- "Internet 25 Mb com TV a cabo."
+      valor3 <- 60.00
+      
+      servico4 <- "Plano Hiper"
+      descricao4 <- "Internet 45 Mb com TV a cabo."
+      valor4 <- 120.00
+      
+      servico5 <- "Plano Master"
+      descricao5 <- "Internet 100 Mb com TV a cabo."
+      valor5 <- 300.00
+      
+      Escreval("Serviços disponíveis para contratação")
+      Escreval("1- ",servico1," - Descrição: ",descricao1," Valor: ",valor1," reais")
+      Escreval("2- ",servico2," - Descrição: ",descricao2," Valor: ",valor2," reais")
+      Escreval("3- ",servico3," - Descrição: ",descricao3," Valor: ",valor3," reais")
+      Escreval("4- ",servico4," - Descrição: ",descricao4," Valor: ",valor4," reais")
+      Escreval("5- ",servico5," - Descrição: ",descricao5," Valor: ",valor5," reais")
+      
+      Escreval("Informe seu código de vendedor")
+      leia(codigoVendedor)
+      
+      ENQUANTO (selecaoMenu <> 3) FACA
+
+               Escreval("Escolha a opção desejada")
+               Escreval("1- Vender")
+               Escreval("2- Ajustar valor de serviço")
+               Escreval("3- Sair")
+               leia(selecaoMenu)
+
+               ESCOLHA selecaoMenu
+                  CASO 1
+                       limpatela
+                       Escreval("Digite o CPF (sem pontos) do cliente")
+                       leia(cpf)
+                       Escreval("Qual serviço você deseja vender?")
+                       Escreval("1- ", servico1)
+                       Escreval("2- ", servico2)
+                       Escreval("3- ", servico3)
+                       Escreval("4- ", servico4)
+                       Escreval("5- ", servico5)
+                       leia(selecaoServico)
+                       limpatela
+           
+                       ESCOLHA selecaoServico
+                        CASO 1
+                            Escreval(servico1," vendido para o cliente com CPF: ",cpf)
+                        CASO 2
+                            Escreval(servico2," vendido para o cliente com CPF: ",cpf)
+                        CASO 3
+                            Escreval(servico3," vendido para o cliente com CPF: ",cpf)
+                        CASO 4
+                            Escreval(servico4," vendido para o cliente com CPF: ",cpf)
+                        CASO 5
+                            Escreval(servico5," vendido para o cliente com CPF: ",cpf)
+                        OUTROCASO
+                            Escreval("Opção inválida")
+                       FIMESCOLHA
+
+                  CASO 2
+                       limpatela
+                       Escreval("Qual serviço você deseja ajustar o valor?")
+                       Escreval("1- ", servico1)
+                       Escreval("2- ", servico2)
+                       Escreval("3- ", servico3)
+                       Escreval("4- ", servico4)
+                       Escreval("5- ", servico5)
+                       leia(selecaoServico)
+                       limpatela
+
+                       
+                       ESCOLHA selecaoServico
+                        CASO 1
+                            Escreval("Qual o novo valor desejado?")
+                            leia(valorAjustado1)
+                            limpatela
+                            Escreval(servico1,": confirmado alteração de valor: R$",valor1," para R$",valorAjustado1)
+                        CASO 2
+                            Escreval("Qual o novo valor desejado?")
+                            leia(valorAjustado2)
+                            limpatela
+                            Escreval(servico2,": confirmado alteração de valor: R$",valor2," para R$",valorAjustado2)
+                        CASO 3
+                            Escreval("Qual o novo valor desejado?")
+                            leia(valorAjustado3)
+                            limpatela
+                            Escreval(servico3,": confirmado alteração de valor: R$",valor3," para R$",valorAjustado3)
+                        CASO 4
+                            Escreval("Qual o novo valor desejado?")
+                            leia(valorAjustado4)
+                            limpatela
+                            Escreval(servico4,": confirmado alteração de valor: R$",valor4," para R$",valorAjustado4)
+                        CASO 5
+                            Escreval("Qual o novo valor desejado?")
+                            leia(valorAjustado5)
+                            limpatela
+                            Escreval(servico5,": confirmado alteração de valor: R$",valor5," para R$",valorAjustado5)
+                        OUTROCASO
+                            Escreval("Opção inválida")
+                            limpatela
+                       FIMESCOLHA
+                            
+                  CASO 3
+                       Escreval("O programa será encerrado")
+                       limpatela
+                  OUTROCASO
+                       Escreval("Opção inválida")
+                       limpatela
+               FIMESCOLHA
+               
+      FIMENQUANTO
+
+Fimalgoritmo
