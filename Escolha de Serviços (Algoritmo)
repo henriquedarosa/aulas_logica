@@ -49,9 +49,11 @@ Inicio
       Escreval("3- ",servico3," - Descrição: ",descricao3," Valor: ",valor3," reais")
       Escreval("4- ",servico4," - Descrição: ",descricao4," Valor: ",valor4," reais")
       Escreval("5- ",servico5," - Descrição: ",descricao5," Valor: ",valor5," reais")
+      Escreval("*****************************************************************************")
       
       Escreval("Informe seu código de vendedor")
       leia(codigoVendedor)
+      Escreval("******************************")
       
       ENQUANTO (selecaoMenu <> 3) FACA
 
@@ -64,8 +66,9 @@ Inicio
                ESCOLHA selecaoMenu
                   CASO 1
                        limpatela
-                       Escreval("Digite o CPF (sem pontos) do cliente")
+                       Escreval("Digite o CPF do cliente")
                        leia(cpf)
+                       Escreval("************************************")
                        Escreval("Qual serviço você deseja vender?")
                        Escreval("1- ", servico1)
                        Escreval("2- ", servico2)
@@ -78,6 +81,7 @@ Inicio
                        ESCOLHA selecaoServico
                        CASO 1
                             Escreval(servico1," vendido para o cliente com CPF: ",cpf)
+                            Escreval("**********************************************************")
                        CASO 2
                             Escreval(servico2," vendido para o cliente com CPF: ",cpf)
                        CASO 3
@@ -106,39 +110,34 @@ Inicio
                        CASO 1
                             Escreval("Qual o novo valor desejado?")
                             leia(valor1)
-                            limpatela
                        CASO 2
                             Escreval("Qual o novo valor desejado?")
                             leia(valor2)
-                            limpatela
                        CASO 3
                             Escreval("Qual o novo valor desejado?")
                             leia(valor3)
-                            limpatela
                        CASO 4
                             Escreval("Qual o novo valor desejado?")
                             leia(valor4)
-                            limpatela
                        CASO 5
                             Escreval("Qual o novo valor desejado?")
                             leia(valor5)
-                            limpatela
                        OUTROCASO
                             limpatela
                             Escreval("Opção inválida")
                        FIMESCOLHA
                        
-
+                       Escreval("*****************************************************************************")
                        Escreval("Serviços com os valores atualizados")
                        Escreval("1- ",servico1," - Descrição: ",descricao1," Valor: ",valor1," reais")
                        Escreval("2- ",servico2," - Descrição: ",descricao2," Valor: ",valor2," reais")
                        Escreval("3- ",servico3," - Descrição: ",descricao3," Valor: ",valor3," reais")
                        Escreval("4- ",servico4," - Descrição: ",descricao4," Valor: ",valor4," reais")
                        Escreval("5- ",servico5," - Descrição: ",descricao5," Valor: ",valor5," reais")
-                            
+                       Escreval("*****************************************************************************")
                   CASO 3
                        limpatela
-                       Escreval("O programa será encerrado")
+                       Escreval("O programa será encerrado...")
                   OUTROCASO
                        limpatela
                        Escreval("Opção inválida")
