@@ -1,0 +1,117 @@
+Algoritmo "Candidatos"
+
+Var
+
+   nomecandidato1 : Caracter
+   candidatura1 : Inteiro
+
+   nomecandidato2 : Caracter
+   candidatura2 : Inteiro
+
+   nomecandidato3 : Caracter
+   candidatura3 : Inteiro
+
+   votos1 : Inteiro
+   votos2 : Inteiro
+   votos3 : Inteiro
+   totalvotos : Inteiro
+
+   opcaomenu : Inteiro
+   opcaovotacao : Inteiro
+   
+Inicio
+
+   escreval("Digite o nome do primeiro candidato")
+   leia(nomecandidato1)
+   escreval("Digite a candidatura do primeiro candidato")
+   leia(candidatura1)
+   limpatela
+
+   escreval("Digite o nome do segundo candidato")
+   leia(nomecandidato2)
+   escreval("Digite a candidatura do segundo candidato")
+   leia(candidatura2)
+   limpatela
+
+   escreval("Digite o nome do terceiro candidato")
+   leia(nomecandidato3)
+   escreval("Digite a candidatura do terceiro candidato")
+   leia(candidatura3)
+   limpatela
+
+   votos1 <- 0
+   votos2 <- 0
+   votos3 <- 0
+   opcaomenu <- 99
+
+   enquanto (opcaomenu <> 2) faca
+
+      escreval("O que você deseja fazer?")
+      escreval("1 - Votar")
+      escreval("2 - Finalizar Votação")
+      leia(opcaomenu)
+      limpatela
+
+      escolha opcaomenu
+
+      caso 1
+         escreval("Em quem você deseja votar?")
+         escreval("1 - ",nomecandidato1)
+         escreval("2 - ",nomecandidato2)
+         escreval("3 - ",nomecandidato3)
+         leia(opcaovotacao)
+         limpatela
+
+         escolha opcaovotacao
+         caso 1
+            votos1 <- votos1 + 1
+         caso 2
+            votos2 <- votos2 + 1
+         caso 3
+            votos3 <- votos3 + 1
+         outrocaso
+            escreval("Opção inválida")
+         fimescolha
+
+      caso 2
+         totalvotos <- votos1 + votos2 + votos3
+         
+         escreval("Votação Encerrada")
+         escreval("")
+         escreval("Total de votos do candidato ",nomecandidato1,": ",votos1)
+         escreval("Total de votos do candidato ",nomecandidato2,": ",votos2)
+         escreval("Total de votos do candidato ",nomecandidato3,": ",votos3)
+         escreval("")
+         escreval("Total de votos da eleição: ",totalvotos)
+         escreval("")
+
+         se (votos1 > votos2) e (votos1 > votos3) entao
+            escreval("***************************************")
+            escreval("Candidato ",nomecandidato1," foi eleito")
+            escreval("Candidatura: ",candidatura1)
+            escreval("***************************************")
+         senao
+            se (votos2 > votos1) e (votos2 > votos3) entao
+               escreval("***************************************")
+               escreval("Candidato ",nomecandidato2," foi eleito")
+               escreval("Candidatura: ",candidatura2)
+               escreval("***************************************")
+            senao
+               se (votos3 > votos1) e (votos3 > votos2)entao
+                  escreval("***************************************")
+                  escreval("Candidato ",nomecandidato3," foi eleito")
+                  escreval("Candidatura: ",candidatura3)
+                  escreval("***************************************")
+               senao
+                  escreval("Empate na eleição")
+               fimse
+            fimse
+         fimse
+
+      outrocaso
+         escreval("Opção inválida")
+      fimescolha
+
+   fimenquanto
+
+Fimalgoritmo
