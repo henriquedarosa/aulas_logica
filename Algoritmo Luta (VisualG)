@@ -1,0 +1,67 @@
+Algoritmo "Luta Jogadores"
+
+Var
+
+   vida1 : Inteiro
+   vida2 : Inteiro
+   dano : Inteiro
+
+   vez : Logico
+   vivo : Logico
+
+Inicio
+
+   vida1 <- 100
+   vida2 <- 100
+
+   vivo <- verdadeiro
+   vez <- verdadeiro
+
+   enquanto (vivo = verdadeiro) faca
+
+      se(vez = verdadeiro) entao
+
+         escreval("Vez do jogador 1. HP [",vida1," ]")
+         escreval("Quantidade de dano: ")
+         leia(dano)
+
+         vida2 <- vida2 - dano
+         vez <- falso
+
+         limpatela
+
+
+      senao
+
+         escreval("Vez do jogador 2. HP [",vida2," ]")
+         escreval("Quantidade de dano: ")
+         leia(dano)
+
+         vida1 <- vida1 - dano
+         vez <- verdadeiro
+
+         limpatela
+
+      fimse
+
+      se (vida1 <= 0) entao
+
+         escreval("Jogador 1 perdeu a luta")
+         vivo <- falso
+
+      senao
+
+         se (vida2 <= 0) entao
+
+            escreval("Jogador 2 perdeu a luta")
+            vivo <- falso
+
+         senao
+
+         fimse
+
+      fimse
+
+   fimenquanto
+
+Fimalgoritmo
