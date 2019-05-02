@@ -1,0 +1,13 @@
+Algoritmo "Decremento com VisualG"
+
+Var
+
+   indice : inteiro
+
+Inicio
+
+   para indice de 10 ate 1 passo -1 faca
+      escreval("Indice -> ",indice)
+   fimpara
+
+Fimalgoritmo
