@@ -1,0 +1,45 @@
+Algoritmo "AvaliaçãoHotel"
+
+Var
+
+   nomes : vetor[1..10] de caracter
+   avaliacoes : vetor[1..10] de inteiro
+   indice : inteiro
+   opcao : caracter
+
+Inicio
+   opcao <- "999"
+   enquanto (opcao <> "0") faca
+
+      escreval("1 - Adiciona Hotel")
+      escreval("2 - Listar Hotéis")
+      escreval("0 - Sair")
+      leia(opcao)
+      limpatela
+
+      escolha opcao
+
+      caso "1"
+      
+         escreval("Qual indice vai salvar o Hotel? 1 a 10")
+         leia(indice)
+         escreval("Nome do Hotel")
+         leia(nomes[indice])
+         escreval("Quantidade de Estrelas")
+         leia(avaliacoes[indice])
+         
+      caso "2"
+      
+         para indice de 1 ate 10 faca
+            se (nomes[indice] <> "") entao
+               escreval("Hotel ",nomes[indice]," - ",avaliacoes[indice]," estrelas")
+            fimse
+         fimpara
+         
+      caso "0"
+      
+         escreval("Bye bye, baby!")
+         
+      fimescolha
+   fimenquanto
+Fimalgoritmo
