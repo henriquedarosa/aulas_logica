@@ -1,0 +1,127 @@
+Algoritmo "Produtos"
+
+Var
+
+   opcao         : caracter
+   produtos      : vetor[0..9] de caracter
+   valores       : vetor[0..9] de real
+   ocupado       : vetor[0..9] de logico
+   nomeProduto   : caracter
+   preco         : real
+   indiceProduto : inteiro
+   opcaoVenda    : inteiro
+   totalVendas   : real
+   qtd           : inteiro
+
+Inicio
+
+   opcao <- "99"
+
+   enquanto (opcao <> "0") faca
+      escreval("1 - Adicionar Produto")
+      escreval("2 - Remover Produto")
+      escreval("3 - Alterar Preço do Produto")
+      escreval("4 - Listar Produtos")
+      escreval("5 - Vender Produto")
+      escreval("6 - Total de Vendas")
+      escreval("0 - Sair")
+      leia(opcao)
+
+      limpatela
+
+      escolha opcao
+      caso "1"
+      
+         escreval("Em que posição você deseja adicioná-lo? 0 a 9")
+         leia(indiceProduto)
+
+         se ((indiceProduto >= 0) e (indiceProduto <= 10)) entao
+            se (ocupado[indiceProduto] = falso) entao
+               escreval("Qual o nome do produto que você deseja adicionar?")
+               leia(nomeProduto)
+               se (nomeProduto = "") entao
+                  limpatela
+                  escreval("O nome do produto não pode estar em branco! Tente novamente.")
+                  escreval("")
+               senao
+                  escreval("Qual o valor do produto ",nomeProduto,"?")
+                  leia(preco)
+                  produtos[indiceProduto] <- nomeProduto
+                  valores[indiceProduto] <- preco
+                  ocupado[indiceProduto] <- verdadeiro
+                  limpatela
+               fimse
+            senao
+               limpatela
+               escreval("Esta posição é inválida ou já está ocupada. Tente outra.")
+            fimse
+         senao
+            limpatela
+            escreval("Você digitou uma posição inválida!")
+            escreval("")
+         fimse
+         
+      caso "2"
+      
+         escreval("Qual produto você quer remover?")
+         para indiceProduto de 0 ate 9 faca
+            se (produtos[indiceProduto] <> "") entao
+               escreval(indiceProduto," - ",produtos[indiceProduto]:10," | R$",valores[indiceProduto])
+            fimse
+         fimpara
+         leia(indiceProduto)
+         produtos[indiceProduto] <- ""
+         valores[indiceProduto] <- 0
+         ocupado[indiceProduto] <- falso
+         limpatela
+         
+      caso "3"
+      
+         escreval("Qual produto você deseja alterar o preço?")
+         para indiceProduto de 0 ate 9 faca
+            se (produtos[indiceProduto] <> "") entao
+               escreval(indiceProduto," - ",produtos[indiceProduto]:10," - R$ ",valores[indiceProduto])
+            fimse
+         fimpara
+         leia(indiceProduto)
+         escreva("Digite o novo valor: ")
+         leia(preco)
+         valores[indiceProduto] <- preco
+         limpatela
+         
+      caso "4"
+      
+         escreval("Lista de produtos")
+         escreval("")
+         para indiceProduto de 0 ate 9 faca
+            se (produtos[indiceProduto] <> "") entao
+               escreval(produtos[indiceProduto]:10," | R$ ",valores[indiceProduto])
+            fimse
+         fimpara
+         escreval("")
+         
+      caso "5"
+      
+         escreval("Qual produto você deseja vender?")
+         para indiceProduto de 0 ate 9 faca
+            se (produtos[indiceProduto] <> "") entao
+               escreval(indiceProduto," - ",produtos[indiceProduto]:10," - R$ ",valores[indiceProduto])
+            fimse
+         fimpara
+         leia(indiceProduto)
+         escreval("Quantas unidades você deseja vender?")
+         leia(qtd)
+         escreval(qtd," unidade(s) de ",produtos[indiceProduto]," vendida(s)")
+         totalVendas <- totalVendas + (valores[indiceProduto] * qtd)
+         
+      caso "6"
+      
+         escreval("Total de vendas até o momento é de: ",totalVendas," reais")
+
+      caso "0"
+      
+         escreval("Saindo...")
+         
+      fimescolha
+   fimenquanto
+Fimalgoritmo
