@@ -1,0 +1,72 @@
+Algoritmo "CandidatosVetores"
+
+Var
+
+   candidatos : vetor[1..5] de caracter
+   votos      : vetor[1..5] de inteiro
+   opcao      : caracter
+   indice     : inteiro
+   indiceMaior: inteiro
+
+Inicio
+
+   opcao <- "99"
+   indiceMaior <- 1
+
+   para indice de 1 ate 5 faca
+      escreva("Nome do candidato",indice,": ")
+      leia(candidatos[indice])
+   fimpara
+
+   limpatela
+
+   enquanto (opcao <> "0") faca
+
+      escreval("1 - Votar")
+      escreval("2 - Finalizar eleição")
+      escreval("0 - Sair")
+      leia(opcao)
+
+      limpatela
+
+      escolha opcao
+
+      caso "1"
+
+         escreval("Em qual candidato você deseja votar?")
+
+         para indice de 1 ate 5 faca
+            se (candidatos[indice] <> "") entao
+               escreval(indice," - ",candidatos[indice])
+            fimse
+         fimpara
+         leia(indice)
+
+         votos[indice] <- votos[indice] + 1
+
+         limpatela
+
+      caso "2"
+
+         escreval("Total de votos de cada candidato")
+
+         para indice de 1 ate 5 faca
+            se (candidatos[indice] <> "") entao
+               escreval(indice," - ",candidatos[indice]:10," - ",votos[indice]:2," voto(s)")
+            fimse
+            se (votos[indice] > votos[indiceMaior]) entao
+               indiceMaior <- indice
+            fimse
+         fimpara
+
+         escreval("")
+         escreval("O candidato com o maior número de votos foi: ",candidatos[indiceMaior],". Votos: ",votos[indiceMaior]," voto(s)")
+         escreval("")
+
+      caso "0"
+
+         escreval("Saindo...")
+
+      fimescolha
+   fimenquanto
+Fimalgoritmo
