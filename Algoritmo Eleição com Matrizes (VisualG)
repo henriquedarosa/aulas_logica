@@ -6,105 +6,72 @@ Var
    menu : inteiro
    l : inteiro
    opcao : caracter
-   votos0 : inteiro
-   votos1 : inteiro
-   votos2 : inteiro
-   votos3 : inteiro
-   votos4 : inteiro
    branco : inteiro
    total : inteiro
+   converteVotos : inteiro
+   // Variáveis para controle do candidato vencedor
    indiceMaior : inteiro
    nomeMaior : caracter
    chapaMaior : caracter
+   //
 
 Inicio
-
-   votos0 <- 0
-   votos1 <- 0
-   votos2 <- 0
-   votos3 <- 0
-   votos4 <- 0
    menu <- 99
-
+   branco <- 0
+   total <- 0
+   
    para l de 0 ate 4 faca
       escreva("Digite o nome do(a) candidato(a)",l+1,": ")
       leia(candidatos[l,0])
       escreva("Digite a chapa do(a) candidato(a) ",candidatos[l,0],": ")
       leia(candidatos[l,1])
+      candidatos[l,2] <- "0"
       limpatela
    fimpara
-
    enquanto (menu <> 3) faca
-
       escreval("1 - Votar")
       escreval("2 - Branco")
       escreval("3 - Finalizar")
       leia(menu)
       limpatela
-
       escolha menu
-
       caso 1
          escreval("Em qual candidato(a) você deseja votar?")
-
          para l de 0 ate 4 faca
             escreval(candidatos[l,1]," - ",candidatos[l,0])
          fimpara
          leia(opcao)
          limpatela
-
-         se (opcao = candidatos[0,1]) entao
-            votos0 <- votos0 + 1
-            candidatos[0,2] <- numpcarac(votos0)
-         fimse
-
-         se (opcao = candidatos[1,1]) entao
-            votos1 <- votos1 + 1
-            candidatos[1,2] <- numpcarac(votos1)
-         fimse
-
-         se (opcao = candidatos[2,1]) entao
-            votos2 <- votos2 + 1
-            candidatos[2,2] <- numpcarac(votos2)
-         fimse
-
-         se (opcao = candidatos[3,1]) entao
-            votos3 <- votos3 + 1
-            candidatos[3,2] <- numpcarac(votos3)
-         fimse
-
-         se (opcao = candidatos[4,1]) entao
-            votos4 <- votos4 + 1
-            candidatos[4,2] <- numpcarac(votos4)
-         fimse
-
+         para l de 0 ate 4 faca
+            se (opcao = candidatos[l,1]) entao
+               converteVotos <- caracpnum(candidatos[l,2])
+               converteVotos <- converteVotos + 1
+               candidatos[l,2] <- numpcarac(converteVotos)
+               total <- total + 1
+               escreval("Voto computado!")
+            fimse
+         fimpara
       caso 2
          branco <- branco + 1
+         total <- total + 1
          escreval("Voto em branco computado!")
       caso 3
          indiceMaior <- 0
          nomeMaior <- ""
          chapaMaior <- ""
-
          para l de 0 ate 4 faca
             se (candidatos[l,0] <> "") entao
                escreval("- Votos do(a) candidato(a) ",candidatos[l,0],": ",candidatos[l,2])
             fimse
-
             se (caracpnum(candidatos[l,2]) > indiceMaior) entao
                indiceMaior <- caracpnum(candidatos[l,2])
                nomeMaior <- candidatos[l,0]
                chapaMaior <- candidatos[l,1]
             fimse
          fimpara
-
          escreval("- Votos em branco:",branco)
-
-         total <- votos0 + votos1 + votos2 + votos3 + votos4 + branco
          escreval("- Total de votos (incluindo votos em branco):",total)
          escreval("- Candidato(a) vencedor(a): ",chapaMaior," - ",nomeMaior)
-
-
       fimescolha
    fimenquanto
 Fimalgoritmo
